@@ -1,3 +1,11 @@
-<img src="" />
-<input type="text" placeholder="¿Qué está pasando hoy?" />
-<button (click)="postTweet()">Postear</button>
+<p>{{ tweetText }}</p>
+<img
+  *ngIf="fav"
+  src="../../../../assets/icons/heart-true.png"
+  (click)="favToggle()"
+/>
+<img
+  *ngIf="!fav"
+  src="../../../../assets/icons/heart-false.png"
+  (click)="favToggle()"
+/>

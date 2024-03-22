@@ -6,7 +6,7 @@ import { TweetComponent } from './shared/components/tweet/tweet.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TweetsListComponent, TweetComponent],
+  imports: [RouterOutlet, TweetsListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

@@ -1,16 +1,19 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tweet',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './tweet.component.html',
   styleUrl: './tweet.component.css',
 })
 export class TweetComponent {
-  @Output() public tweet = new EventEmitter<string>();
+  @Input() public tweetText: string = '';
+  @Input() public fav: boolean = false;
 
-  public postTweet() {
-    this.tweet.emit();
+  public favToggle() {
+    console.log('aprieto fav');
+    this.fav = !this.fav;
   }
 }

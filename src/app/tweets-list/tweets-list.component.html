@@ -1,3 +1,12 @@
-<div *ngFor="let tweet of tweetsList">
-  <p>{{ tweet.text }}</p>
+<app-tweet-input (tweetPosted)="tweetPosted($event)"></app-tweet-input>
+<div *ngIf="tweetsList.length > 0; else emptyList">
+  <ul *ngFor="let tweet of tweetsList">
+    <li>
+      <app-tweet [tweetText]="tweet.text" [fav]="tweet.isFav"></app-tweet>
+    </li>
+  </ul>
 </div>
+
+<ng-template #emptyList>
+  <p>No hay tweets posteados. ¡Empieza ya!</p>
+</ng-template>
