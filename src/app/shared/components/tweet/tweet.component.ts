@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,9 +11,11 @@ import { CommonModule } from '@angular/common';
 export class TweetComponent {
   @Input() public tweetText: string = '';
   @Input() public fav: boolean = false;
+  @Output() favToggled = new EventEmitter<boolean>();
 
   public favToggle() {
     console.log('aprieto fav');
     this.fav = !this.fav;
+    this.favToggled.emit(this.fav);
   }
 }

@@ -1,2 +1,2 @@
-pte localStorage y css
+pte localStorage
 extra añadir delete tweet

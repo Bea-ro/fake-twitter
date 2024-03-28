@@ -1,6 +1,8 @@
+.user-icon-and-name {
+  display: flex;
+  align-items: center;
+}
 .user-icon {
-  padding-top: 21px;
-  padding-left: 24px;
   width: 54px;
   height: 52px;
 }

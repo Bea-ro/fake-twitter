@@ -1,6 +1,8 @@
-<img src="../../../../assets/icons/user.png" class="user-icon" />
-<p class="user-text">Usuario</p>
-<p class="tweet-text">{{ tweetText }}</p>
+<div class="user-icon-and-name">
+  <img src="../../../../assets/icons/user.png" class="user-icon" />
+  <p class="user-text">Usuario</p>
+</div>
+
 <img
   class="heart"
   *ngIf="fav"
@@ -13,3 +15,4 @@
   src="../../../../assets/icons/heart-false.png"
   (click)="favToggle()"
 />
+<p class="tweet-text">{{ tweetText }}</p>

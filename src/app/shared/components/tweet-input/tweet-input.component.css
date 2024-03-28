@@ -1,9 +1,12 @@
+div {
+  display: flex;
+  align-items: center;
+  height: 81px;
+}
 .user-icon {
   width: 54px;
   height: 52px;
-}
-div {
-  border-bottom: 1px solid rgba(108, 103, 103, 1);
+  margin: 21px 0 0 19px;
 }
 input {
   font-family: Inter;
@@ -12,6 +15,8 @@ input {
   color: #958d8d;
   line-height: 24.2px;
   border: none;
+  margin: 10px 0 0 12px;
+  height: 33px;
 }
 
 button {
@@ -28,5 +33,5 @@ button {
   width: 151px;
   height: 35px;
   border-radius: 20px;
-  margin-top: 81px;
+  margin: 0 0 0 428px;
 }
