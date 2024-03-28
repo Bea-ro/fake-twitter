@@ -1,10 +1,14 @@
-<p>{{ tweetText }}</p>
+<img src="../../../../assets/icons/user.png" class="user-icon" />
+<p class="user-text">Usuario</p>
+<p class="tweet-text">{{ tweetText }}</p>
 <img
+  class="heart"
   *ngIf="fav"
   src="../../../../assets/icons/heart-true.png"
   (click)="favToggle()"
 />
 <img
+  class="heart"
   *ngIf="!fav"
   src="../../../../assets/icons/heart-false.png"
   (click)="favToggle()"
