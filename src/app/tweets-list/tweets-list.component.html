@@ -10,11 +10,12 @@
         [fav]="tweet.isFav"
         class="posted-tweet"
         (favToggled)="toggleFavorite(i, $event)"
+        (tweetDeleted)="tweetDeleted($event)"
       ></app-tweet>
     </li>
   </ul>
 </div>
 
 <ng-template #emptyList>
-  <p>No hay tweets posteados. ¡Empieza ya!</p>
+  <p class="empty-message">No hay tweets posteados. ¡Empieza ya!</p>
 </ng-template>

@@ -12,7 +12,6 @@ export class TweetInputComponent {
   @Output() public tweetPosted = new EventEmitter<Tweet>();
 
   public postTweet(input: HTMLInputElement): void {
-    console.log('se postea al dar al botón');
     this.tweetPosted.emit({
       text: input.value,
       isFav: false,

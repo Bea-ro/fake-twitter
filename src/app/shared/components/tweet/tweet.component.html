@@ -1,18 +1,26 @@
-<div class="user-icon-and-name">
-  <img src="../../../../assets/icons/user.png" class="user-icon" />
-  <p class="user-text">Usuario</p>
+<div class="user-icon-name-heart">
+  <div class="user-icon-and-name">
+    <img src="../../../../assets/icons/user.png" class="user-icon" />
+    <p class="user-text">Usuario</p>
+  </div>
+  <div class="bin-heart">
+    <img
+      class="bin"
+      src="../../../../assets/icons/bin.png"
+      (click)="removeTweet(oldTweet.innerText)"
+    />
+    <img
+      class="heart"
+      *ngIf="fav"
+      src="../../../../assets/icons/heart-true.png"
+      (click)="favToggle()"
+    />
+    <img
+      class="heart"
+      *ngIf="!fav"
+      src="../../../../assets/icons/heart-false.png"
+      (click)="favToggle()"
+    />
+  </div>
 </div>
-
-<img
-  class="heart"
-  *ngIf="fav"
-  src="../../../../assets/icons/heart-true.png"
-  (click)="favToggle()"
-/>
-<img
-  class="heart"
-  *ngIf="!fav"
-  src="../../../../assets/icons/heart-false.png"
-  (click)="favToggle()"
-/>
-<p class="tweet-text">{{ tweetText }}</p>
+<p appHighlightTweet class="tweet-text" #oldTweet>{{ tweetText }}</p>

@@ -3,6 +3,7 @@ import { TweetComponent } from '../shared/components/tweet/tweet.component';
 import { Tweet } from '../models/tweet.model';
 import { CommonModule } from '@angular/common';
 import { TweetInputComponent } from '../shared/components/tweet-input/tweet-input.component';
+import { HighlightTweetDirective } from '../shared/directives/highlight-tweet.directive';
 
 const TWEETS_LIST_KEY = 'TWEETS_LIST';
 @Component({
@@ -25,10 +26,13 @@ export class TweetsListComponent implements OnInit {
   public tweetPosted(tweet: Tweet) {
     this.tweetsList.push(tweet);
     this.saveLocalStorage();
-    console.log('llega a la lista al postear');
+  }
+  public tweetDeleted(text: string) {
+    this.tweetsList = this.tweetsList.filter((tweet) => tweet.text !== text);
+    this.saveLocalStorage();
   }
   public toggleFavorite(index: number, newFavState: boolean) {
-    this.tweetsList[index].isFav = newFavState; // Actualizar el estado de favorito en el tweet correspondiente
+    this.tweetsList[index].isFav = newFavState;
     this.saveLocalStorage();
   }
   public saveLocalStorage() {

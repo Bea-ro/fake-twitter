@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 * {
-  font-family: "Inter", sans-serif;
-  font-family: "Fredoka", sans-serif;
   box-sizing: border-box;
   border: none;
   outline: none;
@@ -11,6 +9,9 @@
 }
 a {
   text-decoration: none;
+}
+ul {
+  padding-left: 0;
 }
 li {
   list-style-type: none;

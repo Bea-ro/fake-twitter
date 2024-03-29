@@ -2,6 +2,9 @@
   border-bottom: 1px solid rgba(108, 103, 103, 1);
   height: 128px;
 }
-.posted-tweet {
-  display: flex;
+.empty-message {
+  font-family: Inter;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 400;
 }

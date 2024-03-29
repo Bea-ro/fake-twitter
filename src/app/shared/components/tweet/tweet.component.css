@@ -1,3 +1,9 @@
+.user-icon-name-heart {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 19px;
+}
+
 .user-icon-and-name {
   display: flex;
   align-items: center;
@@ -10,13 +16,23 @@
 .user-text {
   font-size: 16px;
   font-family: Fredoka;
-  font-weight: 400;
+  font-weight: 600;
   color: rgba(0, 0, 0, 1);
   line-height: 19.36px;
+  margin-top: 0;
+}
+.bin {
+  width: 25px;
+  height: 24px;
 }
 .heart {
   width: 25px;
   height: 24px;
+  margin-right: 12px;
+}
+.bin-heart {
+  display: flex;
+  gap: 12px;
 }
 .tweet-text {
   font-family: Inter;
@@ -25,4 +41,6 @@
   line-height: 16.94px;
   color: rgba(0, 0, 0, 1);
   width: 501px;
+  margin: 0 0 0 75px;
+  transition: transform 0.3s ease-out;
 }
