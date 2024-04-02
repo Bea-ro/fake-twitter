@@ -16,3 +16,7 @@ ul {
 li {
   list-style-type: none;
 }
+body {
+  display: flex;
+  justify-content: center;
+}

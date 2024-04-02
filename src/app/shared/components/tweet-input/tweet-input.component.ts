@@ -11,11 +11,14 @@ import { Tweet } from '../../../models/tweet.model';
 export class TweetInputComponent {
   @Output() public tweetPosted = new EventEmitter<Tweet>();
 
-  public postTweet(input: HTMLInputElement): void {
+  public postTweet(input: HTMLTextAreaElement): void {
     this.tweetPosted.emit({
       text: input.value,
       isFav: false,
     });
-    input.value = '';
+    input.value = '¡¿Qué está pasando?!';
+  }
+  public deletePrevMessage(event: Event): void {
+    (event.target as HTMLTextAreaElement).value = '';
   }
 }

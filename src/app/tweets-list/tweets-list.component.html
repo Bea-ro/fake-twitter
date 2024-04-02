@@ -4,11 +4,10 @@
 ></app-tweet-input>
 <div *ngIf="tweetsList.length > 0; else emptyList">
   <ul *ngFor="let tweet of tweetsList; let i = index">
-    <li>
+    <li class="posted-tweet">
       <app-tweet
         [tweetText]="tweet.text"
         [fav]="tweet.isFav"
-        class="posted-tweet"
         (favToggled)="toggleFavorite(i, $event)"
         (tweetDeleted)="tweetDeleted($event)"
       ></app-tweet>

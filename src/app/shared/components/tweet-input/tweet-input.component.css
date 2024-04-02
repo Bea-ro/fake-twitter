@@ -1,14 +1,13 @@
 div {
   display: flex;
-  align-items: center;
   height: 81px;
 }
 .user-icon {
   width: 54px;
   height: 52px;
-  margin: 21px 0 0 19px;
+  margin-left: 19px;
 }
-input {
+textarea {
   font-family: Inter;
   font-size: 20px;
   font-weight: 400;
@@ -16,7 +15,7 @@ input {
   line-height: 24.2px;
   border: none;
   margin: 10px 0 0 12px;
-  height: 33px;
+  width: 460px;
 }
 
 button {
