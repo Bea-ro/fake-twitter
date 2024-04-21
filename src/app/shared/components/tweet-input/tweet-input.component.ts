@@ -16,6 +16,7 @@ export class TweetInputComponent {
     this.tweetPosted.emit({
       text: input.value,
       isFav: false,
+      isDeleted: false,
     });
     input.value = '¡¿Qué está pasando?!';
   }

@@ -1,9 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TweetComponent } from '../shared/components/tweet/tweet.component';
 import { Tweet } from '../models/tweet.model';
 import { CommonModule } from '@angular/common';
 import { TweetInputComponent } from '../shared/components/tweet-input/tweet-input.component';
-import { HighlightTweetDirective } from '../shared/directives/highlight-tweet.directive';
 
 const TWEETS_LIST_KEY = 'TWEETS_LIST';
 @Component({
@@ -15,6 +14,8 @@ const TWEETS_LIST_KEY = 'TWEETS_LIST';
 })
 export class TweetsListComponent implements OnInit {
   public tweetsList: Tweet[] = [];
+  @Output() public updateFav: EventEmitter<void> = new EventEmitter<void>();
+  @Output() public updateDeleted: EventEmitter<void> = new EventEmitter<void>();
 
   ngOnInit() {
     let tweetsPosted = localStorage.getItem('TWEETS_LIST');
@@ -27,12 +28,16 @@ export class TweetsListComponent implements OnInit {
     this.tweetsList.push(tweet);
     this.saveLocalStorage();
   }
-  public tweetDeleted(text: string) {
-    this.tweetsList = this.tweetsList.filter((tweet) => tweet.text !== text);
+  public tweetDeleted() {
+    this.updateDeleted.emit();
+    let filteredTweetsPosted: Tweet[] = this.tweetsList.filter(
+      (tweet: Tweet) => !tweet.isDeleted
+    );
+    this.tweetsList = filteredTweetsPosted;
     this.saveLocalStorage();
   }
-  public toggleFavorite(index: number, newFavState: boolean) {
-    this.tweetsList[index].isFav = newFavState;
+  public toggleFavorite() {
+    this.updateFav.emit();
     this.saveLocalStorage();
   }
   public saveLocalStorage() {
