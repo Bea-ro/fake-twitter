@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Tweet } from '../../../models/tweet.model';
+import { UserComponent } from '../user/user.component';
 
 @Component({
   selector: 'app-tweet-input',
   standalone: true,
-  imports: [],
+  imports: [UserComponent],
   templateUrl: './tweet-input.component.html',
   styleUrl: './tweet-input.component.css',
 })

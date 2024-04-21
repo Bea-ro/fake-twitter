@@ -1,6 +1,6 @@
 <div class="user-icon-name-heart">
   <div class="user-icon-and-name">
-    <img src="../../../../assets/icons/user.png" class="user-icon" />
+    <app-user></app-user>
     <p class="user-text">Usuario</p>
   </div>
   <div class="bin-heart">
@@ -11,14 +11,11 @@
     />
     <img
       class="heart"
-      *ngIf="fav"
-      src="../../../../assets/icons/heart-true.png"
-      (click)="favToggle()"
-    />
-    <img
-      class="heart"
-      *ngIf="!fav"
-      src="../../../../assets/icons/heart-false.png"
+      [src]="
+        fav
+          ? '../../../../assets/icons/heart-true.png'
+          : '../../../../assets/icons/heart-false.png'
+      "
       (click)="favToggle()"
     />
   </div>

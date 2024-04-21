@@ -2,11 +2,7 @@ div {
   display: flex;
   height: 81px;
 }
-.user-icon {
-  width: 54px;
-  height: 52px;
-  margin-left: 19px;
-}
+
 textarea {
   font-family: Inter;
   font-size: 20px;

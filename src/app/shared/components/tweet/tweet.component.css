@@ -1,16 +1,11 @@
 .user-icon-name-heart {
   display: flex;
   justify-content: space-between;
-  margin-left: 19px;
 }
 
 .user-icon-and-name {
   display: flex;
   align-items: center;
-}
-.user-icon {
-  width: 54px;
-  height: 52px;
 }
 
 .user-text {
